@@ -1,7 +1,8 @@
 import { nanoid } from 'nanoid'
+import s from "components/Phonebook/Phonebook.module.css";
 import React, { Component } from 'react'
 
-class AddContact extends Component {
+class Phonebook extends Component {
   state = {
     name: '',
     number: ''
@@ -32,10 +33,11 @@ class AddContact extends Component {
 render() {
   return (
     <form onSubmit={this.handleSubmit}>
-      <label>
+      <label className={s.label}>
         Name
 
         <input
+          className={s.input}
           type="text"
           name="name"
           value={this.state.name}
@@ -50,6 +52,7 @@ render() {
         Number
 
         <input
+          className={s.input}
           type="tel"
           name="number"
           value={this.state.number}
@@ -60,7 +63,7 @@ render() {
         />
       </label>
 
-      <button type='submit' >
+      <button type='submit' className={s.button}>
         Add contact
       </button>
     </form>
@@ -68,4 +71,4 @@ render() {
 }
 } 
 
-export default AddContact;
+export default Phonebook;
